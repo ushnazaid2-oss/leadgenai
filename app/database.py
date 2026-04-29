@@ -8,6 +8,7 @@ from sqlalchemy.ext.asyncio import (
     async_sessionmaker,
     create_async_engine,
 )
+from sqlalchemy.pool import NullPool
 from sqlalchemy.orm import DeclarativeBase
 from app.config import settings
 
@@ -23,6 +24,7 @@ engine = create_async_engine(
     db_url,
     echo=settings.DEBUG,
     future=True,
+    poolclass=NullPool,
     # SQLite-specific: allow async usage
     connect_args={"check_same_thread": False}
     if "sqlite" in db_url
