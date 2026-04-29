@@ -1,0 +1,138 @@
+🚀 Hybrid AI Outreach Agent System — Advanced Prompt
+
+You are a senior AI engineer responsible for designing and delivering a production-ready Hybrid Outreach Agent System. The system must integrate Email Automation, WhatsApp Automation, and an AI Voice Calling Agent (via Twilio), along with a centralized CRM dashboard.
+
+The solution must be scalable, modular, and built using Python as the core language, following best practices in software architecture, API design, and AI integration.
+
+--------------------------------------------------
+
+🎯 OBJECTIVE:
+Build a complete outreach automation platform that allows users to:
+- Import and manage leads
+- Run multi-channel outreach campaigns (Email, WhatsApp, Calls)
+- Use an AI-powered calling agent for human-like conversations
+- Track and convert leads through a unified CRM system
+
+--------------------------------------------------
+
+🧩 SYSTEM ARCHITECTURE:
+Design a modular architecture with separate components:
+- Data Management Module
+- Email Automation Module
+- WhatsApp Automation Module
+- AI Calling Agent (Twilio)
+- CRM Dashboard & Analytics
+
+Ensure:
+- Clean, maintainable code
+- Scalable structure
+- Clear separation of concerns
+
+--------------------------------------------------
+
+🔹 1. DATA MANAGEMENT LAYER:
+- Accept CSV uploads with fields: name, company, email, phone, niche
+- Perform:
+  - Data cleaning & normalization
+  - Duplicate removal
+  - Format validation (email/phone)
+- Allow manual lead entry (UI/API)
+- Store data in a database (SQLite or PostgreSQL)
+
+--------------------------------------------------
+
+📧 2. EMAIL AUTOMATION MODULE:
+- Integrate SMTP providers (Gmail, Outlook, SendGrid)
+- Features:
+  - Bulk email sending
+  - Personalization variables: {name}, {company}, {service}
+  - Open rate tracking
+  - Click tracking
+  - Bounce detection
+- Support multiple sender accounts
+- Allow sender selection per campaign
+- Implement queue-based sending to prevent spam issues
+
+--------------------------------------------------
+
+💬 3. WHATSAPP AUTOMATION MODULE:
+- Integrate WhatsApp Business API
+- Features:
+  - Bulk message sending using templates
+  - Broadcast campaigns
+  - Auto-reply system for incoming messages
+- Maintain conversation logs
+- Dedicated WhatsApp dashboard section
+
+--------------------------------------------------
+
+📞 4. AI CALLING AGENT (TWILIO):
+- Integrate Twilio Voice API
+- Features:
+  - Purchase/connect multiple international numbers (USA, Bahrain, Qatar, Kuwait, etc.)
+  - Country selector for choosing outbound number
+- AI Capabilities:
+  - Accept user-defined call script (pitch)
+  - Follow script intelligently (not rigidly)
+  - Handle out-of-context queries using LLM
+  - Maintain natural, human-like conversation
+  - Speech-to-text + text-to-speech integration
+- Call Outcomes:
+  - Interested
+  - Not Interested
+  - Follow-up Required
+- CRM Actions:
+  - Mark "Hot Lead"
+  - Schedule meetings
+
+--------------------------------------------------
+
+📊 5. CRM DASHBOARD:
+- Unified dashboard for:
+  - Emails
+  - WhatsApp
+  - Calls
+- Lead pipeline stages:
+  Sent → Opened → Replied → Called → Interested → Converted
+- Features:
+  - Activity tracking per lead
+  - Filtering & search
+  - Export reports (PDF/Excel)
+- UI/UX:
+  - Premium red & black theme
+  - Clean, modern interface
+
+--------------------------------------------------
+
+⚙️ TECHNICAL REQUIREMENTS:
+- Language: Python
+- Use modular folder structure
+- Provide:
+  - Clean, well-commented code
+  - API endpoints (FastAPI/Flask preferred)
+- Include:
+  - requirements.txt (all dependencies)
+  - Example CSV file
+  - Sample email templates
+  - Sample WhatsApp templates
+  - Sample calling script
+- Error handling and logging must be implemented
+
+--------------------------------------------------
+
+📦 DELIVERABLES:
+1. Complete Python project (modular structure)
+2. requirements.txt file
+3. Sample CSV dataset
+4. Email + WhatsApp template examples
+5. AI calling script example
+6. README.md with:
+   - Installation steps
+   - Setup instructions
+   - API usage
+   - Running guide
+
+--------------------------------------------------
+
+⚡ EXPECTATION:
+The final output must be production-ready, fully functional, and structured like a real-world SaaS product backend, with clear documentation and zero critical errors.

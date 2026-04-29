@@ -1,0 +1,54 @@
+"""
+Sample leads CSV dataset — 50 realistic business contacts across multiple niches.
+"""
+name,company,email,phone,niche
+Sarah Johnson,TechFlow Solutions,sarah.johnson@techflow.io,+14155551234,SaaS
+Michael Chen,DataPulse Analytics,m.chen@datapulse.com,+14155551235,Data Analytics
+Emma Rodriguez,GreenLeaf Marketing,emma@greenleafmkt.com,+12125551236,Digital Marketing
+James Wilson,CloudNine Systems,jwilson@cloudnine.tech,+13105551237,Cloud Infrastructure
+Priya Patel,InnoVate Labs,priya@innovatelabs.co,+16505551238,AI/ML
+Robert Kim,SwiftScale Commerce,robert.kim@swiftscale.com,+12025551239,E-commerce
+Lisa Thompson,BrightPath Education,l.thompson@brightpath.edu,+17185551240,EdTech
+David Martinez,SecureShield Cyber,david@secureshield.io,+14085551241,Cybersecurity
+Amanda Foster,HealthSync Digital,amanda.f@healthsync.com,+13125551242,HealthTech
+Thomas Wright,UrbanFlow Logistics,twright@urbanflow.co,+12145551243,Logistics
+Jennifer Lee,CreativeStudio Pro,jennifer@creativestudio.pro,+14155551244,Design Agency
+Christopher Brown,FinEdge Consulting,c.brown@finedge.com,+12125551245,FinTech
+Sophia Davis,EcoTrade Global,sophia.d@ecotrade.global,+13105551246,Sustainability
+Daniel Taylor,RapidDeploy Tech,dtaylor@rapiddeploy.io,+16505551247,DevOps
+Rachel Green,PeakPerform HR,rachel@peakperform.hr,+12025551248,HR Tech
+Andrew Miller,SmartRetail AI,andrew.m@smartretail.ai,+17185551249,Retail Tech
+Nicole Wang,TrueNorth Analytics,nwang@truenorth.analytics,+14085551250,Business Intelligence
+Kevin O'Brien,BlueSky Aviation,kevin@bluesky.aero,+13125551251,Aviation
+Maria Garcia,ContentForge Media,maria@contentforge.media,+12145551252,Content Marketing
+Steven Park,NexaCloud Services,spark@nexacloud.com,+14155551253,Cloud Infrastructure
+Catherine Adams,BioGen Research,c.adams@biogen-research.com,+12125551254,BioTech
+Ryan Cooper,QuantumLeap Finance,rcooper@quantumleap.fin,+13105551255,FinTech
+Olivia White,TrendSpot Social,olivia@trendspot.social,+16505551256,Social Media
+Benjamin Hayes,AutoFlow Robotics,bhayes@autoflow.bot,+12025551257,Robotics
+Emily Brooks,PixelPerfect Design,emily@pixelperfect.design,+17185551258,Design Agency
+Nathan Scott,VaultSafe Security,nscott@vaultsafe.sec,+14085551259,Cybersecurity
+Hannah Turner,FoodChain Express,hturner@foodchain.express,+13125551260,FoodTech
+Lucas Phillips,StreamLine SaaS,lucas@streamline.saas,+12145551261,SaaS
+Victoria Reed,MindfulApp Co,victoria@mindfulapp.co,+14155551262,Mental Health
+Alexander Murphy,DroneVista Aerial,amurphy@dronevista.com,+12125551263,Drone Tech
+Isabella Clark,EduSphere Online,iclark@edusphere.online,+13105551264,EdTech
+Jason Hall,SupplyLink Pro,jhall@supplylink.pro,+16505551265,Supply Chain
+Megan Young,StyleForge Fashion,megan@styleforge.fashion,+12025551266,Fashion Tech
+Brandon King,PropTech Ventures,bking@proptech.ventures,+17185551267,Real Estate Tech
+Laura Simmons,AgriSmart Systems,lsimmons@agrismart.sys,+14085551268,AgriTech
+Gregory Ross,FleetCommand IO,gross@fleetcommand.io,+13125551269,Fleet Management
+Samantha Bell,TeleDoc Connect,sbell@teledoc.connect,+12145551270,HealthTech
+Patrick Wood,CryptoVault Labs,pwood@cryptovault.labs,+14155551271,Blockchain
+Diana Morris,GreenEnergy Plus,dmorris@greenenergy.plus,+12125551272,CleanTech
+Eric Coleman,BuildRight Corp,ecoleman@buildright.corp,+13105551273,Construction Tech
+Ashley Rivera,LearnFlow Academy,arivera@learnflow.academy,+16505551274,EdTech
+Tyler Jenkins,PayStream Global,tjenkins@paystream.global,+12025551275,FinTech
+Courtney Long,FitSync Health,clong@fitsync.health,+17185551276,Fitness Tech
+Derek Price,CyberGuard Pro,dprice@cyberguard.pro,+14085551277,Cybersecurity
+Michelle Howard,TravelSphere AI,mhoward@travelsphere.ai,+13125551278,Travel Tech
+Sean Ward,CodeForge Dev,sward@codeforge.dev,+12145551279,Software Dev
+Brittany Cox,NutriFit Labs,bcox@nutrifit.labs,+14155551280,Health & Wellness
+Marcus Richardson,SolarTech Power,mrichardson@solartech.power,+12125551281,CleanTech
+Christine Torres,DataMesh Cloud,ctorres@datamesh.cloud,+13105551282,Cloud Infrastructure
+Jonathan Stewart,RoboTech Industries,jstewart@robotech.ind,+16505551283,Robotics

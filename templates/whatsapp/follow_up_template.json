@@ -1,0 +1,19 @@
+{
+  "template_name": "follow_up_reminder",
+  "language": "en_US",
+  "category": "MARKETING",
+  "components": [
+    {
+      "type": "BODY",
+      "text": "Hi {{1}}! Just following up on our previous conversation about {{2}}. We'd love to help {{3}} grow faster with AI-powered outreach. Ready to schedule a quick call? Reply CALL and we'll set it up! 🚀",
+      "example": {
+        "body_text": [["Sarah", "lead generation", "TechFlow Solutions"]]
+      }
+    }
+  ],
+  "parameters": [
+    {"name": "recipient_name", "position": 1},
+    {"name": "topic", "position": 2},
+    {"name": "company_name", "position": 3}
+  ]
+}

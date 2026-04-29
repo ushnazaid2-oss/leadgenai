@@ -1,0 +1,49 @@
+# LeadGenAI — Requirements
+# Optimized for stability across Python 3.11 - 3.13
+
+# --- Core Web Framework ---
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+python-multipart
+aiofiles
+jinja2
+httpx
+
+# --- Database & ORM ---
+sqlalchemy[asyncio]>=2.0.0
+aiosqlite>=0.19.0
+psycopg2-binary>=2.9.9
+asyncpg>=0.29.0
+dj-database-url>=2.1.0
+pydantic>=2.0.0
+pydantic-settings
+python-dotenv
+email-validator
+phonenumbers
+
+# --- Authentication ---
+python-jose[cryptography]
+passlib[bcrypt]
+bcrypt
+
+# --- Task Queue ---
+celery[redis]
+redis
+
+# --- Outreach Engines ---
+aiosmtplib
+sendgrid
+twilio
+openai
+
+# --- Data & Analytics ---
+pandas>=2.2.0
+openpyxl
+reportlab
+
+# --- Utilities ---
+cryptography
+structlog
+slowapi
+pytest
+pytest-asyncio

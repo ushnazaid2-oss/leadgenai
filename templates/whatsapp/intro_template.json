@@ -1,0 +1,19 @@
+{
+  "template_name": "business_intro",
+  "language": "en_US",
+  "category": "MARKETING",
+  "components": [
+    {
+      "type": "BODY",
+      "text": "Hi {{1}}! 👋 I'm reaching out from {{2}}. We help companies in the {{3}} space automate their outreach and generate 3x more qualified leads. Would you be open to learning more? Reply YES for a free demo!",
+      "example": {
+        "body_text": [["Sarah", "LeadGenAI", "SaaS"]]
+      }
+    }
+  ],
+  "parameters": [
+    {"name": "recipient_name", "position": 1},
+    {"name": "sender_company", "position": 2},
+    {"name": "recipient_niche", "position": 3}
+  ]
+}

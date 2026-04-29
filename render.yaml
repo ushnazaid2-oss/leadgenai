@@ -1,0 +1,58 @@
+services:
+  # --- FastAPI Dashboard ---
+  - type: web
+    name: leadgenai-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port 10000
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: leadgenai-db
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: leadgenai-redis
+          property: connectionString
+      - fromGroup: leadgenai-env
+
+  # --- Celery Worker (Campaign Engine) ---
+  - type: worker
+    name: leadgenai-worker
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: celery -A app.celery_app worker --loglevel=info -P solo
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: leadgenai-db
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: leadgenai-redis
+          property: connectionString
+      - fromGroup: leadgenai-env
+
+# --- Redis for Celery ---
+  - type: redis
+    name: leadgenai-redis
+    ipAllowList: [] # Only allow internal connections
+
+# --- PostgreSQL Database ---
+databases:
+  - name: leadgenai-db
+    plan: free # Change to "starter" for production backups
+
+envVarGroups:
+  - name: leadgenai-env
+    envVars:
+      - key: FEATURE_EMAIL_ENABLED
+        value: "true"
+      - key: FEATURE_WHATSAPP_ENABLED
+        value: "true"
+      - key: FEATURE_CALLS_ENABLED
+        value: "true"
+      - key: ENV
+        value: "production"

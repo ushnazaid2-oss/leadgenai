@@ -1,0 +1,105 @@
+# ============================================
+# LeadGenAI — Docker Compose
+# One-command startup: docker-compose up
+# ============================================
+
+version: '3.9'
+
+services:
+  # --- FastAPI Application ---
+  app:
+    build: .
+    container_name: leadgenai-app
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+    volumes:
+      - ./logs:/app/logs
+      - ./leadgenai.db:/app/leadgenai.db
+    depends_on:
+      - redis
+    restart: unless-stopped
+    networks:
+      - leadgenai-net
+
+  # --- Celery Worker (Email Queue) ---
+  worker-email:
+    build: .
+    container_name: leadgenai-worker-email
+    command: celery -A app.celery_app worker -Q email -l info --concurrency=2
+    env_file:
+      - .env
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - redis
+    restart: unless-stopped
+    networks:
+      - leadgenai-net
+
+  # --- Celery Worker (WhatsApp Queue) ---
+  worker-whatsapp:
+    build: .
+    container_name: leadgenai-worker-whatsapp
+    command: celery -A app.celery_app worker -Q whatsapp -l info --concurrency=2
+    env_file:
+      - .env
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - redis
+    restart: unless-stopped
+    networks:
+      - leadgenai-net
+
+  # --- Celery Worker (Calls Queue) ---
+  worker-calls:
+    build: .
+    container_name: leadgenai-worker-calls
+    command: celery -A app.celery_app worker -Q calls -l info --concurrency=1
+    env_file:
+      - .env
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - redis
+    restart: unless-stopped
+    networks:
+      - leadgenai-net
+
+  # --- Celery Worker (Analytics Queue) ---
+  worker-analytics:
+    build: .
+    container_name: leadgenai-worker-analytics
+    command: celery -A app.celery_app worker -Q analytics -l info --concurrency=1
+    env_file:
+      - .env
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - redis
+    restart: unless-stopped
+    networks:
+      - leadgenai-net
+
+  # --- Redis (Celery Broker & Cache) ---
+  redis:
+    image: redis:7-alpine
+    container_name: leadgenai-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+    networks:
+      - leadgenai-net
+
+volumes:
+  redis-data:
+
+networks:
+  leadgenai-net:
+    driver: bridge
