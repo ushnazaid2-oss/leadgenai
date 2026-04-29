@@ -76,6 +76,12 @@ app.include_router(calls_router)
 app.include_router(analytics_router)
 app.include_router(tracking_router)
 
+# --- Static Files (Dashboard Frontend) ---
+static_dir = Path(__file__).parent / "static"
+if static_dir.exists():
+    app.mount("/", StaticFiles(directory=str(static_dir), html=True), name="static")
+
+
 @app.get("/api/health")
 async def health_check():
     """Health check endpoint."""
@@ -88,9 +94,3 @@ async def health_check():
             "calls": settings.FEATURE_CALLS_ENABLED,
         },
     }
-
-
-# --- Static Files (Dashboard Frontend) ---
-static_dir = Path(__file__).parent / "static"
-if static_dir.exists():
-    app.mount("/", StaticFiles(directory=str(static_dir), html=True), name="static")
