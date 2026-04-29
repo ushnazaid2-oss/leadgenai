@@ -11,10 +11,12 @@ from sqlalchemy.ext.asyncio import (
 from sqlalchemy.orm import DeclarativeBase
 from app.config import settings
 
-# Fix for Render/Heroku postgres URLs which start with postgres:// but need postgresql+asyncpg://
+# Fix for Render/Heroku/Railway/Supabase postgres URLs
 db_url = settings.DATABASE_URL
 if db_url.startswith("postgres://"):
     db_url = db_url.replace("postgres://", "postgresql+asyncpg://", 1)
+elif db_url.startswith("postgresql://") and "+asyncpg" not in db_url:
+    db_url = db_url.replace("postgresql://", "postgresql+asyncpg://", 1)
 
 # Create async engine
 engine = create_async_engine(
